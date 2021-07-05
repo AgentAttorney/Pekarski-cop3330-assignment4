@@ -1,0 +1,175 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ToDoListMainMenu
+
+ToDoListMainMenu -- ToDoListMainMenuController
+
+class ToDoListMainMenuController{
+ButtonAddClicked(ActionEvent event)
+ButtonRemoveClicked(ActionEvent event)
+ButtonEditClicked(ActionEvent event)
+ButtonDisplayClicked(ActionEvent event)
+ButtonSaveLoadClicked(ActionEvent event)
+ButtonExitClicked(ActionEvent event)
+}
+ToDoListMainMenuController -- addController
+ToDoListMainMenuController -- removeController
+ToDoListMainMenuController -- EditController
+ToDoListMainMenuController -- displayController
+ToDoListMainMenuController -- SaveLoadController
+' Add submenu
+
+class addController{
+ButtonBackMMClicked(ActionEvent event)
+ButtonListClicked(ActionEvent event)
+ButtonItemClicked(ActionEvent event)
+}
+
+class addListController implements Initializable{
+ButtonBackAddClicked(ActionEvent event)
+TextField NameNewList
+ButtonOKClicked(ActionEvent event)
+ButtonReturnClicked(ActionEvent event)
+initialize(URL location, ResourceBundle resources)
+}
+
+class addItemController implements Initializable{
+ListView chooseListAdd
+TextField chooseItemAdd
+ButtonBackClicked(ActionEvent event)
+ButtonConfirmClicked(ActionEvent event)
+ButtonFinishClicked(ActionEvent event)
+initialize(URL location, ResourceBundle resources)
+}
+
+addController -- addListController
+addController -- addItemController
+
+' Remove submenu
+
+class removeController{
+ButtonBackMMClicked(ActionEvent event)
+ButtonListClicked(ActionEvent event)
+ButtonItemClicked(ActionEvent event)
+}
+
+class removeListController{
+ListView AvailableLists
+ButtonBackRemoveClicked(ActionEvent event)
+ButtonConfirmClicked(ActionEvent event)
+ButtonReturnClicked(ActionEvent event)
+}
+
+class removeListPopUpController{
+    ButtonYesClicked(ActionEvent event)
+    ButtonNoClicked(ActionEvent event)
+}
+
+class removeItemController implements Initializable{
+ListView ListToRemove
+ListView ItemToRemove
+ButtonBackClicked(ActionEvent event)
+ButtonConfirmClicked(ActionEvent event)
+ButtonReturnClicked(ActionEvent event)
+initialize(URL location, ResourceBundle resources)
+}
+
+removeController -- removeListController
+removeController -- removeItemController
+removeListController -- removeListPopUpController
+
+' Edit submenu
+
+class EditController{
+ButtonBackMMClicked(ActionEvent event)
+ButtonListClicked(ActionEvent event)
+ButtonItemClicked(ActionEvent event)
+}
+
+class EditListController implements Initializable{
+TextField newListName
+ListView ListToEdit
+ButtonBackEditClicked(ActionEvent event)
+ButtonConfirmClicked(ActionEvent event)
+ButtonReturnClicked(ActionEvent event)
+initialize(URL location, ResourceBundle resources)
+}
+
+class EditItemController implements Initializable{
+TextField UserEdit
+ChoiceBox ItemEdit
+ButtonBackEditClicked(ActionEvent event)
+ButtonConfirmClicked(ActionEvent event)
+ButtonReturnClicked(ActionEvent event)
+initialize(URL location, ResourceBundle resources)
+}
+
+EditController -- EditListController
+EditController -- EditItemController
+
+' display submenu - maybe more to add here?
+
+class displayController implements Initializable{
+TextField chooseListName
+ChoiceBox Complete
+ChoiceBox Incomplete
+ButtonBackClicked(ActionEvent event)
+ButtonConfirmClicked(ActionEvent event)
+initialize(URL Location, ResourceBundle rb)
+}
+
+' Save/Load submenu
+
+
+class SaveLoadController{
+ButtonBackMMClicked(ActionEvent event)
+ButtonSaveClicked(ActionEvent event)
+ButtonLoadClicked(ActionEvent event)
+}
+
+class SaveExternalListController{
+backButtonClicked(ActionEvent event)
+ButtonReturnClicked(ActionEvent event)
+ButtonOKClicked(ActionEvent event)
+ListView AvailableLists
+}
+
+class LoadExternalListController{
+backButtonClicked(ActionEvent event)
+ButtonReturnClicked(ActionEvent event)
+ButtonOKClicked(ActionEvent event)
+ListView AvailableLists
+}
+
+SaveLoadController -- SaveController
+SaveLoadController -- LoadController
+SaveController -- SaveExternalListController
+LoadController -- LoadExternalListController
+
+class returnMain{
+ReturnToMainMenu(ActionEvent event)
+}
+
+' No need for exit submenu, exit button will leave the program
+
+class ToDoListAll{
+List<ToDoList>
+public void addToDoList()
+public void editToDoList()
+public void removeToDoList()
+}
+
+class ToDoList{
+String Name
+public void addItem()
+public void editItem()
+public void removeItem()
+List<Items>
+}
+
+class Items{
+String description, DueDate
+}
+
+@enduml

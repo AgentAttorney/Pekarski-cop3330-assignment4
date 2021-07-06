@@ -9,7 +9,10 @@ import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/*
+ *  UCF COP3330 Summer 2021 Assignment 4 Solution
+ *  Copyright 2021 Richard Pekarski
+ */
 public class addItemController implements Initializable {
 
      @FXML private ListView chooseListAdd;

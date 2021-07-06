@@ -15,7 +15,9 @@ public class LoadExternalListController {
         // return to main menu, using returnMenu class's associated method
     }
     public void ButtonOKClicked(ActionEvent event){
-        // Loads the specified list ListName from user input and specified fileName
-        // If no list is specified, load all lists from specified fileName
+        /*
+         calls a method that loads a specified List and FileName (LoadList)
+         If no list is specified, load all lists from specified fileName using loadLists
+        */
     }
 }

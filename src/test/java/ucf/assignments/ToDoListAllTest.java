@@ -48,4 +48,19 @@ class ToDoListAllTest {
         // Assert that our boolean return value matches the respective boolean
         // (complete,incomplete,all)
     }
+
+    @Test // 18
+    void writeFileAll() {
+        // Take in the List of ToDoLists specified at the top of the class
+        // Have a file called "SaveTestAll.txt"
+        // Call the writeFile method with SaveTestAll.txt and our List of ToDoLists
+        // Have the method return 'true' if it succeeds
+    }
+
+    @Test // 20
+    void readFileAll() {
+        // Have an external file named "LoadTestAll.txt" in IntelliJ
+        // Call the readFile method with LoadTestAll.txt and our List of ToDoLists
+        // Have the method return 'true' if it succeeds
+    }
 }

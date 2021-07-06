@@ -154,22 +154,31 @@ ReturnToMainMenu(ActionEvent event)
 ' No need for exit submenu, exit button will leave the program
 
 class ToDoListAll{
-List<ToDoList>
-public void addToDoList()
-public void editToDoList()
-public void removeToDoList()
+public void addToDoList(ToDoList new_tdl)
+public void editToDoList(String user_input, String old_list)
+public void removeToDoList(String name_to_remove)
+public void displayLists(ToDoList select_tdl,boolean complete, boolean incomplete)
+public void SaveLists(ToDoListAll User_Save)
+public void LoadLists()
+public boolean writeFileAll(File filename, ToDoListAll User_Save)
+public boolean readFileAll()
+ArrayList<ToDoLists>
 }
-
 class ToDoList{
-String Name
-public void addItem()
-public void editItem()
-public void removeItem()
-List<Items>
+public void addItem(Items Item_to_add)
+public void editItem(Items Item_to_edit, String DueDate, String Description)
+public void removeItem(String item_name)
+public void markItem(Items user_item,boolean complete)
+public void SaveList(ToDoList User_Save)
+public void LoadList()
+public boolean writeFile(File filename, ToDoList User_Save)
+public boolean readFile(File filename, ToDoList User_Load)
+ArrayList<Items>
 }
 
 class Items{
 String description, DueDate
+boolean complete
 }
 
 @enduml

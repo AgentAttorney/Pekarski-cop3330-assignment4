@@ -65,4 +65,18 @@ class ToDoListTest {
         // Call the markItem method with our boolean value and the Item we choose (say the 4th)
         // Assert that the 4th item's complete value is equal to "false"
     }
+    @Test // 17
+    void writeFile() {
+        // Take in the ToDoList specified at the top of the class
+        // Have a file called "SaveTest.txt"
+        // Call the writeFile method with SaveTest.txt and our ToDoList
+        // Have the method return 'true' if it succeeds
+    }
+
+    @Test // 19
+    void readFile() {
+        // Have an external file named "LoadTest.txt" in IntelliJ
+        // Call the readFile method with LoadTest.txt and our List of ToDoLists
+        // Have the method return 'true' if it succeeds
+    }
 }

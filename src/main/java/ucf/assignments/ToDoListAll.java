@@ -3,6 +3,7 @@ package ucf.assignments;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +26,31 @@ public class ToDoListAll {
         // based on complete, incomplete
         // Will display the Items of a ToDoList using a For Loop
         // Realistically, each Item should have a "title" but not in requirements
+    }
+    public void SaveLists(ToDoListAll User_Save){ // Saves All Lists
+        // use a Filechooser and get the stage of the current window
+        // implement the name of the window, the file extension( .txt)
+        // Call a method that writes to the file specified in the specific format
+        // MethodName(File filename, ToDoListAll User_Save)
+    }
+    public void LoadLists(){
+        // works similar to SaveLists
+        // use the stage of the current window in a FileChooser
+        // call a FileChooser method that "saves" the directory
+        // calls a method that reads the File until the end of the File
+        // The File will have the format as a save file, so no need to worry
+    }
+    public boolean writeFileAll(File filename, ToDoListAll User_Save){
+        // write to the file
+        // Format------------
+        // ListName1 Item1DD Item1Desc Item2DD Item2Desc...
+        // After each "thing" is printed, have newline char
+        return true;
+    }
+    public boolean readFileAll(){
+        // gets the File name from writeFileAll and the Empty List of ToDoLists
+        // reads until end of file, inserting the items and their properties when prompted
+        return true;
     }
 }
 

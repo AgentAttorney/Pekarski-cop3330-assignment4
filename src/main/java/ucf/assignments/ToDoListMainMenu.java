@@ -13,10 +13,10 @@ import java.io.IOException;
 
 public class ToDoListMainMenu extends Application { // This functions as our 'main' class
     public static void main(String[] args) {
-        //launch(args);
+        launch(args);
     }
      public void start(Stage primaryStage){
-         /*try{
+         try{
              Parent root = FXMLLoader.load(getClass().getResource("ToDoListMainMenu.FXML"));
              Scene scene = new Scene(root);
              primaryStage.setScene(scene);
@@ -25,7 +25,7 @@ public class ToDoListMainMenu extends Application { // This functions as our 'ma
          }
          catch(IOException e){
              e.printStackTrace();
-         }*/
+         }
     // Set the parent using the associated FXML file
     // Make a new scene using the parent as the template window
     // Set the scene to the stage

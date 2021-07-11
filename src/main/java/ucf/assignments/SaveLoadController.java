@@ -5,9 +5,12 @@ package ucf.assignments;
  */
 import javafx.event.ActionEvent;
 
+import java.io.IOException;
+
 public class SaveLoadController {
-    public void ButtonBackMMClicked(ActionEvent event){
+    public void ButtonBackMMClicked(ActionEvent event) throws IOException {
         // call returnMain class's associated method to return to main menu
+        returnMain.returnToMainMenu(event);
         // consistent since it goes back submenu
     }
     public void ButtonSaveClicked(ActionEvent event){

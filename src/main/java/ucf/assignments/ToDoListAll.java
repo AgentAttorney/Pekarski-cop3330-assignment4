@@ -4,18 +4,27 @@ package ucf.assignments;
  *  Copyright 2021 Richard Pekarski
  */
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ToDoListAll {
+/*public class ToDoListAll {
+
     // create an arraylist of ToDoLists, and then make an observable list of ToDoLists
-    // Use FXCollections.observableList and have our ArrayList as the parameters
-    public void addToDoList(ToDoList new_tdl){
+    public List<ToDoList> master_list = new ArrayList<ToDoList>();
+    public ObservableList<ToDoList> observableList = FXCollections.observableArrayList();
+
+
+    public void addToDoList(String name){
+        ToDoList new_tdl = new ToDoList();
+        new_tdl.name = name;
+        observableList.add(new_tdl);
         // use add method for ArrayLists
     }
+
     public void editToDoList(String user_input, String old_list){
         // Call the setter with user_input
         // Change the name of the list
@@ -55,5 +64,5 @@ public class ToDoListAll {
         // reads until end of file, inserting the items and their properties when prompted
         return true;
     }
-}
+}*/
 

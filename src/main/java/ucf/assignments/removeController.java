@@ -5,9 +5,12 @@ package ucf.assignments;
  */
 import javafx.event.ActionEvent;
 
+import java.io.IOException;
+
 public class removeController {
-    public void  ButtonBackMMClicked(ActionEvent event){
+    public void  ButtonBackMMClicked(ActionEvent event) throws IOException {
         // calls the returnMenu class to return to main menu
+        returnMain.returnToMainMenu(event);
         // one submenu back, so consistent
     }
     public void ButtonListClicked(ActionEvent event){

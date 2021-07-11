@@ -8,14 +8,65 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ToDoListTest {
-    // Declare a ToDoList with 5 items that have pre-set dates and descriptions
-    @Test // 9
+    ToDoList tdl = new ToDoList();
+
+    @Test // 2
+    void ItemLength_Small(){
+        Items item1 = new Items();
+        assertTrue(item1.validDesc("E"));
+    }
+    @Test // 2
+    void ItemLength_Large(){
+        Items item1 = new Items();
+        assertTrue(item1.validDesc("111111111111111111111111111111111111" +
+                "111111111111111111111111111111111111111111111111111111111111" +
+                "11111111111111111111111111111111111111111111111111111111111111" +
+                "11111111111111111111111111111111111111111111111111111111111111111" +
+                "111111111111111111111111111111111"));
+    }
+    @Test // 3
+    void ItemDD_Valid(){
+        Items item1 = new Items();
+        assertTrue(item1.validFormat("2000-04-28"));
+    }
+    @Test // 3
+    void ItemDD_Valid_Feb29(){
+        Items item1 = new Items();
+        assertTrue(item1.validFormat("2000-02-29"));
+    }
+    @Test // 3
+    void ItemDD_Invalid_Feb30(){
+        Items item1 = new Items();
+        assertFalse(item1.validFormat("2000-02-30"));
+    }
+
+    @Test // 4
     void addItem() {
         // Declare a new item with a due date and description
-        // Those values are filled in with the setters in the Item class
+        Items item1 = new Items();
+        item1.setDescription("Hello Sinner");
+        item1.setDue_Date("2000-04-20");
+
         // Call the addItem method given the Item
-        // Assert that our ToDoList has a 6th item checking the size
-        // Assert that our ToDoList 6th's value has the Item's Name
+        tdl.addItem(item1);
+
+        // Assert that our ToDoList has an item checking the size
+        assertEquals(1,tdl.getObv_list().size());
+
+    }
+    @Test // 4
+    void addItem_CheckDesc() {
+        // Declare a new item with a due date and description
+        Items item1 = new Items();
+        item1.setDescription("Hello Sinner");
+        item1.setDue_Date("2000-04-20");
+
+        // Call the addItem method given the Item
+        tdl.addItem(item1);
+
+        // Assert that our ToDoList's observable list's first item matches the description
+        assertEquals("Hello Sinner",tdl.getObv_list().get(0).getDescription());
+
     }
 
     @Test // 11 12

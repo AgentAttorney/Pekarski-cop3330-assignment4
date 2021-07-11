@@ -3,9 +3,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -47,22 +47,14 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="chooseListName" promptText="Enter list name here." GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
-         <GridPane.margin>
-            <Insets bottom="5.0" left="112.0" right="10.0" />
-         </GridPane.margin>
-         <padding>
-            <Insets bottom="10.0" top="10.0" />
-         </padding>
-      </TextField>
       <CheckBox fx:id="Complete" mnemonicParsing="false" text="Completed" GridPane.rowIndex="1" />
       <CheckBox fx:id="Incomplete" mnemonicParsing="false" text="Incomplete" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets top="40.0" />
          </GridPane.margin>
       </CheckBox>
-      <ListView prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="2" />
-      <Button mnemonicParsing="false" onAction="#ButtonConfirmClicked" text="Confirm" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+      <ListView fx:id="ListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+      <Button fx:id="ConfirmButton" mnemonicParsing="false" onAction="#ButtonConfirmClicked" text="Confirm" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
          <font>
             <Font size="18.0" />
          </font>
@@ -97,5 +89,10 @@
             <Insets top="45.0" />
          </GridPane.margin>
       </Label>
+      <ChoiceBox fx:id="chooseListName" prefWidth="150.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="50.0" top="20.0" />
+         </GridPane.margin>
+      </ChoiceBox>
    </children>
 </GridPane>

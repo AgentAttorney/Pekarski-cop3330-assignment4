@@ -107,6 +107,5 @@
             <Insets top="50.0" />
          </GridPane.margin>
       </Label>
-      <Label fx:id="test" text="Label" />
    </children>
 </GridPane>

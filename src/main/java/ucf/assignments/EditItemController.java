@@ -9,20 +9,24 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class EditItemController implements Initializable {
     @FXML private TextField UserEdit;
     @FXML private ChoiceBox ItemEdit;
-    public void ButtonBackEditClicked(ActionEvent event){
+    public void ButtonBackEditClicked(ActionEvent event) throws IOException {
         // returns to previous menu
+        SceneManager.changeScene(event,"Edit.FXML");
+        // call the SceneManager class with our FXML Name
     }
     public void ButtonConfirmClicked(ActionEvent event){
         // Call function to edit the Item's specified property in the specific list
     }
-    public void ButtonReturnClicked(ActionEvent event){
+    public void ButtonReturnClicked(ActionEvent event) throws IOException {
         // returns to Main Menu using returnMain's associated method
+        returnMain.returnToMainMenu(event);
     }
 
     @Override

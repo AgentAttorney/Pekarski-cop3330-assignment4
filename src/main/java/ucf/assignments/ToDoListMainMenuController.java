@@ -25,27 +25,15 @@ public class ToDoListMainMenuController {
     }
     public void ButtonEditClicked(javafx.event.ActionEvent event) throws IOException {
         SceneManager.changeScene(event,"Edit.FXML");
-        // make a new parent using the Edit fxml file
-        // make a new scene using this parent
-        // make and set a new Stage by getting the Source, Scene, and Window of the event
-        // set scene of new Stage with our new scene
-        //  display the window
+        // call Scene Manager with name of FXML file
     }
     public void ButtonDisplayClicked(javafx.event.ActionEvent event) throws IOException {
         SceneManager.changeScene(event,"Display.FXML");
-        // make a new parent using the Display fxml file
-        // make a new scene using this parent
-        // make and set a new Stage by getting the Source, Scene, and Window of the event
-        // set scene of new Stage with our new scene
-        //  display the window
+        // call Scene Manager with FXML file name
     }
     public void ButtonSaveLoadClicked(javafx.event.ActionEvent event) throws IOException {
         SceneManager.changeScene(event,"SaveLoad.FXML");
-        // make a new parent using the SaveLoad fxml file
-        // make a new scene using this parent
-        // make and set a new Stage by getting the Source, Scene, and Window of the event
-        // set scene of new Stage with our new scene
-        //  display the window
+        // call Scene Manager with FXML file name
     }
     public void ButtonExitClicked(javafx.event.ActionEvent event){
         ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
